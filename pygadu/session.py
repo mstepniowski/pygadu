@@ -14,9 +14,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Boston, MA 02111.
 #
-__revision__ = "$Revision: 9 $"
-
-
 import threading, time
 import asyncore, asynchat
 from socket import AF_INET, SOCK_STREAM
