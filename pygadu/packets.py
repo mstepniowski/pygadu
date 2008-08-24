@@ -82,6 +82,9 @@ class GGPacket(object):
             self.pack()
         return self.data
 
+    def __repr__(self):
+        return '%s(%r)' % (self.__class__.__name__, binascii.hexlify(self.data))
+
 
 class Unknown(GGPacket):
     """
