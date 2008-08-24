@@ -19,6 +19,7 @@ class Echo(PyGadu):
         # self.sendMessage(5354504, "Halo!")
         # print "message sent"
         print "send status"
+        self.sendFriendList([])
         self.changeStatus(STATUS_BUSY)
     
     def onConnect(self):
