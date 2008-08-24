@@ -68,7 +68,7 @@ class PyGadu(object): #IGNORE:R0904
         """
         packet = SendMessage()
         packet.recipient = recipient
-        packet.seq = 0
+        packet.seq = 1 # TODO: Don't ignore sequence numbers?
         packet.msg_class = 0
         packet.text = text
         self.sendPacket(packet)
@@ -251,7 +251,7 @@ class GGSocket(asynchat.async_chat): #IGNORE:R0904
         if self._header:
             # Analiza nagłówka pekietu.
             self.type, self.length = parse_header(self.data)
-            self.data = self.data[8:]            
+            self.data = self.data[8:]
             if self.length > 0:
                 # Trzeba pobrać treść pakietu.
                 self.set_terminator(self.length)
