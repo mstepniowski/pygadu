@@ -2,7 +2,6 @@ import time
 
 from pygadu.session import PyGadu
 from pygadu.util import query_hub
-from pygadu.const import STATUS_BUSY
 
 
 class Echo(PyGadu):
@@ -16,11 +15,7 @@ class Echo(PyGadu):
     def onLoginOk(self, packet):
         print repr(packet)
         print "Login Ok!"
-        # self.sendMessage(5354504, "Halo!")
-        # print "message sent"
-        print "send status"
         self.sendFriendList([])
-        self.changeStatus(STATUS_BUSY)
     
     def onConnect(self):
         print "Connect"
